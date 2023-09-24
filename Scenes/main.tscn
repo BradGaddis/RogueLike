@@ -38,5 +38,9 @@ texture = ExtResource("4_5wwac")
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("5_ve210")
 
+[node name="Enemy Spawner" type="Node" parent="GameManager"]
+
+[node name="Environment Spawner" type="Node" parent="GameManager"]
+
 [node name="Enemy" parent="." instance=ExtResource("6_f8c2w")]
 position = Vector2(617, 266)

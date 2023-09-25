@@ -1,12 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://fnahsr4u3jae"]
+[gd_scene load_steps=3 format=3 uid="uid://fnahsr4u3jae"]
 
 [ext_resource type="Texture2D" uid="uid://cu6hkk3vihuie" path="res://Assets/single white pixel.png" id="1_7nfrh"]
-[ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_hrmc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ppv"]
 
-[node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_hrmc0")
+[node name="RigidBody2D" type="RigidBody2D"]
+z_index = 10
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_j7ppv")

@@ -18,3 +18,9 @@ shape = SubResource("RectangleShape2D_vovtw")
 modulate = Color(1, 0.0470588, 1, 1)
 scale = Vector2(32, 32)
 texture = ExtResource("2_whqho")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080

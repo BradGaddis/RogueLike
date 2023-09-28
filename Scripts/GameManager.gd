@@ -1,15 +1,12 @@
 extends Node
 
-var level_generator = load("res://Scripts/LevelGenerator.gd")
+var level_template = preload("res://Scenes/level_template.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# get the current level we are on
-	# call method that generates surrounding levels
-	# load the adjacent levels (9 in total)
-	print(level_generator)	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	for i in range(3):
+		for j in range(3):
+			var level = level_template.instantiate()
+			var new_position = Vector2(i* Defaults.get_screen_dims().x, j * Defaults.get_screen_dims().y)
+			level.position = new_position
+			add_child(level)

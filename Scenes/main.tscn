@@ -1,79 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnrxifm6l6pkn"]
+[gd_scene load_steps=3 format=3 uid="uid://dnrxifm6l6pkn"]
 
-[ext_resource type="Texture2D" uid="uid://7yd1wrrbd7ue" path="res://Assets/bg1.png" id="1_1smuv"]
 [ext_resource type="PackedScene" uid="uid://chf6iacsnug2o" path="res://Scenes/player.tscn" id="1_at4s6"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="5_ve210"]
-[ext_resource type="Script" path="res://Scenes/EnvironmentSpawner.gd" id="6_t54lk"]
-[ext_resource type="Script" path="res://Scenes/EnemySpawner.gd" id="6_ybw0o"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("5_ve210")
 
-[node name="LevelTemplate" type="Node2D" parent="."]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="LevelTemplate"]
-layer = -100
-follow_viewport_enabled = true
-
-[node name="Background" type="TextureRect" parent="LevelTemplate/CanvasLayer"]
-offset_right = 3840.0
-offset_bottom = 2160.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_1smuv")
-stretch_mode = 4
-
-[node name="Environment" type="Node" parent="LevelTemplate"]
-
-[node name="Enemies" type="Node2D" parent="LevelTemplate"]
-
-[node name="Player" parent="LevelTemplate" instance=ExtResource("1_at4s6")]
+[node name="Player" parent="." instance=ExtResource("1_at4s6")]
 position = Vector2(450, 219)
 speed = 151
-
-[node name="EnemySpawner" type="Node2D" parent="LevelTemplate"]
-script = ExtResource("6_ybw0o")
-
-[node name="EnemySpawnPositions" type="Node2D" parent="LevelTemplate/EnemySpawner"]
-
-[node name="EnemyMark_01" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(341, 309)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_02" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(409, 843)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_03" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(927, 761)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_04" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(1562, 831)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_05" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(1566, 327)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_06" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(964, 316)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_07" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(607, 590)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_08" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(1418, 537)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_09" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(1157, 620)
-gizmo_extents = 76.0
-
-[node name="EnemyMark_10" type="Marker2D" parent="LevelTemplate/EnemySpawner/EnemySpawnPositions"]
-position = Vector2(705, 412)
-gizmo_extents = 76.0
-
-[node name="EnvironmentSpawner" type="Node" parent="LevelTemplate"]
-script = ExtResource("6_t54lk")

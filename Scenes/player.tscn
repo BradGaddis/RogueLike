@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chf6iacsnug2o"]
+[gd_scene load_steps=5 format=3 uid="uid://chf6iacsnug2o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_rhqe0"]
 [ext_resource type="Texture2D" uid="uid://cu6hkk3vihuie" path="res://Assets/single white pixel.png" id="2_whqho"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="3_j7wir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vovtw"]
 size = Vector2(32, 32)
@@ -24,3 +25,5 @@ limit_left = 0
 limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
+position_smoothing_enabled = true
+script = ExtResource("3_j7wir")

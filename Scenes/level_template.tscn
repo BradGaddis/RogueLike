@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://degjvyfqgk2bn"]
+
+[ext_resource type="Texture2D" uid="uid://7yd1wrrbd7ue" path="res://Assets/bg1.png" id="1_fv7c5"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawner.gd" id="2_bp4mi"]
+[ext_resource type="Script" path="res://Scripts/EnvironmentSpawner.gd" id="3_u5uar"]
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -100
+offset_left = 1.52
+offset_right = 3841.52
+offset_bottom = 2160.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fv7c5")
+stretch_mode = 4
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="EnvironmentSpawner" type="Node2D" parent="."]
+script = ExtResource("3_u5uar")
+
+[node name="EnvSpawnPositions" type="Node2D" parent="EnvironmentSpawner"]
+
+[node name="EnvMarker_1" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(267, 618)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_2" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(585, 754)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_3" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(786, 532)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_4" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(1072, 430)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_5" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(1326, 593)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_6" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(1635, 464)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_7" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(1679, 222)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_8" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(1319, 303)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_9" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(1224, 814)
+gizmo_extents = 168.1
+
+[node name="EnvMarker_10" type="Marker2D" parent="EnvironmentSpawner/EnvSpawnPositions"]
+modulate = Color(0.0980392, 0.364706, 0.882353, 1)
+position = Vector2(405, 273)
+gizmo_extents = 168.1
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("2_bp4mi")
+
+[node name="EnemySpawnPositions" type="Node2D" parent="EnemySpawner"]
+
+[node name="EnemyMark_01" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(341, 309)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_02" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(409, 843)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_03" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(927, 761)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_04" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(1562, 831)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_05" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(1566, 327)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_06" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(964, 316)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_07" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(607, 590)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_08" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(1418, 537)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_09" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(1157, 620)
+gizmo_extents = 76.0
+
+[node name="EnemyMark_10" type="Marker2D" parent="EnemySpawner/EnemySpawnPositions"]
+position = Vector2(705, 412)
+gizmo_extents = 76.0

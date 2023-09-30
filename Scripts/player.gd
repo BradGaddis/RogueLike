@@ -5,6 +5,7 @@ signal levels_loaded
 @export var speed = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 
@@ -23,3 +24,13 @@ func _physics_process(_delta):
 		
 	move_and_slide()
 	
+
+
+func _on_game_rooms_loaded():
+	var rooms = get_tree().get_nodes_in_group("rooms")
+	var half = round(float(len(rooms)) / 2) - 1
+	var mid_room = rooms[half]
+	var mid_room_rect = mid_room.find_child("Background").get_rect()
+	var mid_room_center: Vector2 = Vector2(mid_room.global_position.x + mid_room_rect.size.x /2,
+											mid_room.global_position.y + mid_room_rect.size.y /2) 
+	global_position = mid_room_center

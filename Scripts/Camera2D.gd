@@ -5,8 +5,8 @@ var player
 var rooms
 
 var u_bound = 0
-var r_bound = 1920
-var d_bound = 1820
+var r_bound = 0
+var d_bound = 0
 var l_bound = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +18,9 @@ func _ready():
 	limit_right = r_bound
 	limit_bottom = d_bound
 	limit_left = l_bound
+	await get_tree().create_timer(.5).timeout
+	position_smoothing_enabled = true
+	limit_smoothed = true
 	
 	
 func _on_levels_loaded():
@@ -26,6 +29,7 @@ func _on_levels_loaded():
 		var area = room.find_child("Area2D")
 		area.body_entered.connect(_on_body_entered)
 		area.loc_and_size.connect(_loc_and_size)
+
 
 func _loc_and_size(pos_and_size):
 	u_bound = pos_and_size.position.y

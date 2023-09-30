@@ -16,7 +16,7 @@ func randomize_marker_positions():
 	# The markers should spawn in random places	
 	pass
 
-func get_num_trees(level_num = null, min_trees:int = 1 ,max_trees: int = 5) -> int:
+func get_num_trees(_level_num = null, min_trees:int = 1 ,max_trees: int = 5) -> int:
 	var num_trees = randi_range(min_trees, max_trees)
 	return num_trees
 
@@ -25,7 +25,7 @@ func generate_trees(num_trees):
 		var position = get_random_position()
 		spawn_tree(position)
 		
-func get_num_rocks(level_num = null, min_rocks:int = 1 ,max_rocks: int = 5) -> int:
+func get_num_rocks(_level_num = null, min_rocks:int = 1 ,max_rocks: int = 5) -> int:
 	var num_rocks = randi_range(max_rocks , min_rocks) 
 	return num_rocks
 

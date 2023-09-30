@@ -3,7 +3,7 @@ extends Node
 var enemy_scene = preload("res://Scenes/enemy.tscn")
 
 @onready var SpawnPositions = $EnemySpawnPositions
-@onready var boss = $Boss
+#@onready var boss = $Boss
 
 var positions_filled = []
 
@@ -17,7 +17,7 @@ func randomize_marker_positions():
 	# The markers should spawn in random places
 	pass
 
-func should_boss_generate(num_levels_generated):
+func should_boss_generate(_num_levels_generated):
 	# if a lair has generated, yes, otherwise no
 	pass
 
@@ -29,7 +29,7 @@ func position_boss():
 #	after getting the bosses lair and position of it, place the boss in proximity
 	pass
 
-func get_num_enemies(level_num = null, min_enimes:int = 1 ,max_enimes: int = 5) -> int:
+func get_num_enemies(_level_num = null, min_enimes:int = 1 ,max_enimes: int = 5) -> int:
 	var num_enemies = randi_range(min_enimes, max_enimes)
 	
 #	print("The number of enemies generated is ",num_enemies)

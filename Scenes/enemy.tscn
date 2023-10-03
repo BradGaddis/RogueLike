@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ppv"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
-z_index = 10
+z_index = 11
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

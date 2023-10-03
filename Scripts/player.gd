@@ -3,15 +3,14 @@ extends CharacterBody2D
 signal levels_loaded
 
 @export var speed = 5
-var limit_pos_top
-var limit_pos_right
-var limit_pos_bottom
-var limit_pos_left
+var limit_pos_top = 0
+var limit_pos_right = 0
+var limit_pos_bottom = 0
+var limit_pos_left = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	pass # Replace with function body.
+	GameManager.rooms_loaded.connect(_on_game_rooms_loaded)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,7 +26,6 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -1 * speed
 		
-	move_and_slide()
 	
 	if global_position.y < limit_pos_top:
 		global_position.y = limit_pos_top
@@ -40,8 +38,11 @@ func _physics_process(_delta):
 		
 	if global_position.x < limit_pos_left:
 		global_position.x = limit_pos_left
-		
+	
+	move_and_slide()
+	
 func _on_game_rooms_loaded():
+	print("should do some shit")
 	var rooms = get_tree().get_nodes_in_group("rooms")
 	var half = round(float(len(rooms)) / 2) - 1
 	var mid_room = rooms[half]

@@ -12,8 +12,7 @@ var l_bound = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_node("..")
-	var game_node = player.get_parent()
-	game_node.rooms_loaded.connect(_on_levels_loaded)
+	GameManager.rooms_loaded.connect(_on_levels_loaded)
 	limit_top = u_bound
 	limit_right = r_bound
 	limit_bottom = d_bound
@@ -24,6 +23,7 @@ func _ready():
 	
 	
 func _on_levels_loaded():
+	print("do this thing")
 	rooms = get_tree().get_nodes_in_group("rooms")
 	for room in rooms:
 		var area = room.find_child("Area2D")

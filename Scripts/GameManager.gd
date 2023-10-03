@@ -5,6 +5,10 @@ signal rooms_loaded
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	await get_tree().create_timer(.25).timeout
+	load_rooms()
+		
+func load_rooms():
 	for i in range(Globals.get_grid_array().x):
 		for j in range(Globals.get_grid_array().y):
 			var level = level_template.instantiate()
@@ -13,5 +17,5 @@ func _ready():
 			var new_position = Vector2(i* Globals.get_screen_dims().x, j * Globals.get_screen_dims().y)
 			level.position = new_position
 			add_child(level)
-	emit_signal("rooms_loaded")
-
+	rooms_loaded.emit()
+	print("rooms loaded")

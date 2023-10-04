@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://chf6iacsnug2o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_rhqe0"]
-[ext_resource type="Texture2D" uid="uid://cu6hkk3vihuie" path="res://Assets/single white pixel.png" id="2_whqho"]
+[ext_resource type="Texture2D" uid="uid://crejnpotd7cd8" path="res://Assets/red.png" id="2_78aue"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="3_j7wir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vovtw"]
@@ -16,9 +16,8 @@ z_index = 1
 shape = SubResource("RectangleShape2D_vovtw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.0470588, 1, 1)
-scale = Vector2(32, 32)
-texture = ExtResource("2_whqho")
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_78aue")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

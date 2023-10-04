@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnrxifm6l6pkn"]
+[gd_scene load_steps=3 format=3 uid="uid://dnrxifm6l6pkn"]
 
 [ext_resource type="PackedScene" uid="uid://chf6iacsnug2o" path="res://Scenes/player.tscn" id="1_at4s6"]
+[ext_resource type="Texture2D" uid="uid://cu6hkk3vihuie" path="res://Assets/single white pixel.png" id="3_3jc3x"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_at4s6")]
 speed = 1000
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="HeartContainer" type="Sprite2D" parent="Hud"]
+position = Vector2(90, 80)
+scale = Vector2(64, 64)
+texture = ExtResource("3_3jc3x")
+
+[node name="WeaponContainer" type="Sprite2D" parent="Hud"]
+position = Vector2(1077, 80)
+scale = Vector2(64, 64)
+texture = ExtResource("3_3jc3x")

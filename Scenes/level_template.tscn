@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://degjvyfqgk2bn"]
+[gd_scene load_steps=7 format=3 uid="uid://degjvyfqgk2bn"]
 
 [ext_resource type="Texture2D" uid="uid://7yd1wrrbd7ue" path="res://Assets/bg1.png" id="1_fv7c5"]
+[ext_resource type="Script" path="res://Scenes/level_template.gd" id="1_w8bdy"]
 [ext_resource type="Script" path="res://Scripts/EnemySpawner.gd" id="2_bp4mi"]
 [ext_resource type="Script" path="res://Scripts/EnvironmentSpawner.gd" id="3_u5uar"]
 [ext_resource type="Script" path="res://Scenes/level_dim_handler.gd" id="4_fplg1"]
@@ -9,6 +10,7 @@
 size = Vector2(1920, 1080)
 
 [node name="LevelTemplate" type="Node2D"]
+script = ExtResource("1_w8bdy")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -100

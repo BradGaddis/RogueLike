@@ -2,7 +2,7 @@ extends Node
 
 var tree1_scene = preload("res://Scenes/tree_1.tscn")
 var rock1_scene = preload("res://Scenes/rock_1.tscn")
-var boss_lair = preload("res://boss_lair.tscn")
+var boss_lair = preload("res://Scenes/boss_lair.tscn")
 var children 
 
 @onready var SpawnPositions = $EnvSpawnPositions
@@ -24,12 +24,12 @@ func _ready():
 
 func generate_lair():
 	var cur_level_index = len(get_tree().get_nodes_in_group("rooms")) - 1
-	for room in Globals.lair_rooms:
+	for room in GameManager.lair_rooms:
 		if cur_level_index == room.index:
-			var postion = get_random_position()
+			var position = get_random_position()
 			var boss_lair_instance = boss_lair.instantiate()
 			add_child(boss_lair_instance)
-			boss_lair_instance.position = postion
+			boss_lair_instance.position = position
 	
 func randomize_marker_positions():
 	# The markers should be withing a minimum radius of each other
